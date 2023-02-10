@@ -96,12 +96,12 @@ def user(uid: int):
     if request.method == 'PUT':
         user_data = json.loads(request.data)
         user = User.query.get(uid)
-        user.first_name = user_data('first_name')
-        user.last_name = user_data('last_name')
-        user.age = user_data('age')
-        user.email = user_data('email')
-        user.role = user_data('role')
-        user.phone = user_data('phone')
+        user.first_name = user_data['first_name']
+        user.last_name = user_data['last_name']
+        user.age = user_data['age']
+        user.email = user_data['email']
+        user.role = user_data['role']
+        user.phone = user_data['phone']
         db.session.add(user)
         db.session.commit()
         return '', 204
